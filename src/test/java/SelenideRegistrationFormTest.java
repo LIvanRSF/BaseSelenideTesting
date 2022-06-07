@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 @DisplayName("Тест на изучение Selenide")
 public class SelenideRegistrationFormTest extends SelenideBaseClass {
 
-    @DisplayName("Заполнение регистрационной формы")
+    @DisplayName("Успешное заполнение регистрационной формы")
     @Test
     public void successRegistration() {
 
@@ -60,7 +60,6 @@ public class SelenideRegistrationFormTest extends SelenideBaseClass {
         $("#city").click();
         $("#stateCity-wrapper").$(byText(city)).click();
         $("#submit").click();
-        System.out.println(" ");
 
         // Проверка формы подтверждения регистрации. Данные на форме должны соответстовавать
         // введенным ранее данным
@@ -69,11 +68,9 @@ public class SelenideRegistrationFormTest extends SelenideBaseClass {
             text(gender),
             text(phoneNumber),
             text(dayOfBirth + " " + monthOfBirth + "," + yearOfBirth),
-            text(gender),
             text(subject),
             text(hobbies),
             text(pictureName),
-            text(gender),
             text(address),
             text(state + " " + city));
     }
