@@ -7,7 +7,7 @@ import pages.RegistrationFormPage;
 @DisplayName("Тест на изучение Selenide")
 public class SelenideRegistrationFormTest extends SelenideBaseClass {
 
-    @DisplayName("Заполнение регистрационной формы")
+    @DisplayName("Успешное заполнение регистрационной формы")
     @Test
     public void successRegistration() {
 
