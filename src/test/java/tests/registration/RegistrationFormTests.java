@@ -1,22 +1,18 @@
-package tests;
+package tests.registration;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationFormPage;
 
 @DisplayName("Тест на изучение Selenide")
-public class SelenideRegistrationFormTest extends SelenideBaseClass {
+public class RegistrationFormTests extends RegFormBaseClass {
 
     @DisplayName("Успешное заполнение регистрационной формы")
     @Test
     public void successRegistration() {
 
-        //Создаем класс с тестовыми данными
-        RegFormTestData testData = new RegFormTestData();
-
         //Непосредственно работа с элементами сайта - заполнение формы регистрации, нажатие кнопки "Submit"
-        new RegistrationFormPage().openPage()
-                                  .setFirstName(testData.firstName)
+        new RegistrationFormPage().setFirstName(testData.firstName)
                                   .setLastName(testData.lastName)
                                   .setUserEmail(testData.userEmail)
                                   .setGender(testData.gender)
@@ -30,7 +26,7 @@ public class SelenideRegistrationFormTest extends SelenideBaseClass {
                                   .clickSubmitButton();
 
         // Проверка формы подтверждения регистрации. Данные на форме должны соответстовавать
-        // введенным ранее данным
+        // введенным ранее данными
         new RegistrationFormPage().checkResult("Student Name", testData.firstName + " " + testData.lastName)
                                   .checkResult("Student Email", testData.userEmail)
                                   .checkResult("Gender", testData.gender)

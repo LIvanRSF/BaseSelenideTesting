@@ -3,8 +3,8 @@ package pages;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
-import static com.codeborne.selenide.Selenide.open;
 
+import com.codeborne.selenide.Selenide;
 import java.io.File;
 import pages.components.CalendarPageComponent;
 import pages.components.StateAndCityPageComponent;
@@ -18,7 +18,7 @@ public class RegistrationFormPage {
 
     public RegistrationFormPage openPage() {
         //открываем сайт и убираем лишнее (рекламные баннеры)
-        open("/automation-practice-form");
+        Selenide.open("/automation-practice-form");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
 
